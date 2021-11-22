@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  postgres_db:
+    image: postgres:12.7-alpine
+    restart: always
+    container_name: persistent-postgres
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - '5434:5432'
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: 0707591349ebacbb1cbc35b52bae59e5
+      POSTGRES_DB: devdb
+  mysql_db:
+    image: mysql:5.7
+    restart: always
+    container_name: persistent-mysql
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    ports:
+      - '3308:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: 615cf24c02f48772327992ff7c1fa8ba
+      MYSQL_DATABASE: devdb
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: 90d10d7a52047bf00157445b3fec8036
