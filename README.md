@@ -31,7 +31,7 @@ docker-compose up -d
 Shutdown databases:
 
 ```
-docker-compose down -d
+docker-compose down
 ```
 
 Consult the `docker-compose.yml` or `.env` files to get an idea how to connect to your favorite database.
